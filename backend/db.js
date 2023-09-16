@@ -1,9 +1,10 @@
 const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 var Todo = require("./todo");
+var Uri = require("./uri");
 
-const uri =
-  "mongodb+srv://duyguduygu:123@tododb.2tvok6t.mongodb.net/?retryWrites=true&w=majority";
+const uri =Uri;
+  
 
 async function connectToMongoDB() {
   try {
