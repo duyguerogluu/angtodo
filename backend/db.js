@@ -4,7 +4,6 @@ var Todo = require("./todo");
 var Uri = require("./uri");
 
 const uri =Uri;
-  
 
 async function connectToMongoDB() {
   try {
@@ -17,12 +16,12 @@ async function connectToMongoDB() {
     const express = require("express");
     const app = express();
     app.use(express.json());
-
+  
     const cors = require("cors");
     app.use(
       cors({
         credentials: true,
-        origin: ["*"],
+        origin: ["http://localhost:4200"],
       })
     );
 

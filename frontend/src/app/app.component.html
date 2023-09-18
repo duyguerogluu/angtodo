@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="form-group">
+    <label for="work">Yapılacak İş</label>
+    <input type="text" [(ngModel)]="work" name="work" id="work" class="form-control">
+  </div>
+  <div class="form-group mt-1">
+    <button class="btn btn-outline-primary w-100" (click)="add()">Kaydet</button>
+  </div>
+  <div class="form-group">
+    <label for="work">Güncellenecek İş</label>
+    <input type="text" [(ngModel)]="updateModel.work" name="work" id="work" class="form-control">
+  </div>
+  <div class="form-group mt-1">
+    <button class="btn btn-outline-primary w-100" (click)="update()">Günncelle</button>
+  </div>
+   <hr>
+  <div class="form-group">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Yapılacak İş</th>
+          <th>Durumu</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos let i=index">
+          <td>{{i+1}}</td>
+          <td>{{todo.work}}</td>
+          <td>{{todo.isCompleted ? "Yapıldı" : "Yapılacak"}}</td>
+        <button class="btn btn-outline-warning btn-sm" (click)="get(todo)">Güncelle</button>
+        <button class="btn btn-outline-danger btn-sm mx-1" (click)="delete(todo)">Sil</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
